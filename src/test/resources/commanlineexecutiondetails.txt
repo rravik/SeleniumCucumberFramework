@@ -1,0 +1,8 @@
+mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main -Dexec.args="src/test/resources/awesomecucumber --glue awesomecucumber"
+mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main
+mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main -Dexec.args="--threads 3"
+
+mvn clean test
+mvn clean test -Denv=STAGE -Dbrowser=chrome -Dcucumber.filter.tags=@smoke
+mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main -Dcucumber.filter.tags=@smoke
+mvn exec:java -Dexec.classpathScope=test -Dexec.mainClass=io.cucumber.core.cli.Main -Dexec.args="--tags @smoke --threads 2"
